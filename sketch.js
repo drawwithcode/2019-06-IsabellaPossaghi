@@ -1,4 +1,4 @@
-var canvas;
+
 
 var stars = [];
 var speed;
@@ -21,8 +21,6 @@ function preload() {
 
 function setup() {
 
-  canvas = createCanvas(800,800)
-
   button = createButton("love color")
   button.mousePressed(change_background);
 
@@ -34,7 +32,7 @@ function setup() {
 
 
   background_c = color(0);
-  //createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight);
   for (var i = 0; i < 200; i++) {
     stars[i] = new Star();
   }
