@@ -10,6 +10,8 @@ var button2;
 
 var slider;
 
+var myTitle
+
 
 
 
@@ -34,6 +36,7 @@ function setup() {
   slider = createSlider(1,500,250);
   slider.position(800,170)
 
+  var myTitle = select("h1");
 
 
   background_c = color(0);
