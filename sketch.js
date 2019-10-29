@@ -1,3 +1,5 @@
+var canvas;
+
 var stars = [];
 var speed;
 
@@ -5,6 +7,10 @@ var background_c;
 var button;
 var size;
 var button2;
+
+var slider;
+
+
 
 
 
@@ -14,19 +20,25 @@ function preload() {
 }
 
 function setup() {
-  button = createButton("love")
+
+  canvas = createCanvas(800,800)
+
+  button = createButton("love color")
   button.mousePressed(change_background);
 
-  button2 =createButton("big")
+  button2 =createButton("love size")
   button2.mousePressed(change_size);
 
-  createSlider(1,100,50)
+  slider = createSlider(1,500,250);
+
+
 
   background_c = color(0);
-  createCanvas(windowWidth, windowHeight);
+  //createCanvas(windowWidth, windowHeight);
   for (var i = 0; i < 200; i++) {
     stars[i] = new Star();
   }
+
 }
 
 function change_background() {
@@ -34,7 +46,7 @@ function change_background() {
 }
 
 function change_size() {
-    size = Math.random()*200
+    size = Math.random(10,30)
 }
 
 
@@ -42,14 +54,18 @@ function change_size() {
 
 function draw() {
   background(background_c)
-  speed = map(mouseX, mouseY, width, 0, 60);
+  speed = map(mouseX, 0, width, 0, 60);
   translate(width / 2, height / 2);
   for (var i = 0; i < stars.length; i++) {
     stars[i].update();
     stars[i].show();
   }
-  image(cupid, 10* random(1, 1.4), 10* random(1, 1.4), size, size)
+
+
+  image(cupid, 15* random(1, 1.4), 15* random(1, 1.4), slider.value(), slider.value())
   imageMode(CENTER)
+
+
   }
 
 
@@ -74,7 +90,7 @@ function Star() {
     var sx = map(this.x / this.z, 0, 1, 0, width);
     var sy = map(this.y / this.z, 0, 1, 0, height);
 
-    var r = map(this.z, 0, width, random(70, 200), 0);
+    var r = map(this.z, 0, width, 300, 0);
     //ellipse(sx, sy, r, r);
 
     //
@@ -82,7 +98,7 @@ function Star() {
     //   image(soul,sx, sy, r*5, r*5)
     //   imageMode(CENTER)
     // } else {
-       image(soul,sx, sy, r, r)
+       image(soul,sx, sy, r*size, r*size)
     //   imageMode(CENTER)
     // }
 
