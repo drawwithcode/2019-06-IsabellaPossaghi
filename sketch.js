@@ -1,11 +1,102 @@
-function preload(){
-  // put preload code here
+var stars = [];
+var speed;
+
+var background_c;
+var button;
+var size;
+var button2;
+
+
+
+function preload() {
+  soul = loadImage("./assests_images/soul.png");
+  cupid = loadImage("./assests_images/cupid.png")
 }
 
 function setup() {
-  // put setup code here
+  button = createButton("love")
+  button.mousePressed(change_background);
+
+  button2 =createButton("big")
+  button2.mousePressed(change_size);
+
+  createSlider(1,100,50)
+
+  background_c = color(0);
+  createCanvas(windowWidth, windowHeight);
+  for (var i = 0; i < 200; i++) {
+    stars[i] = new Star();
+  }
 }
 
+function change_background() {
+    background_c = color(255, Math.random() * 255, 255);
+}
+
+function change_size() {
+    size = Math.random()*200
+}
+
+
+
+
 function draw() {
-  // put drawing code here
+  background(background_c)
+  speed = map(mouseX, mouseY, width, 0, 60);
+  translate(width / 2, height / 2);
+  for (var i = 0; i < stars.length; i++) {
+    stars[i].update();
+    stars[i].show();
+  }
+  image(cupid, 10* random(1, 1.4), 10* random(1, 1.4), size, size)
+  imageMode(CENTER)
+  }
+
+
+
+function Star() {
+  this.x = random(-width, width);
+  this.y = random(-height, height);
+  this.z = random(width); //it's all about the z!
+  this.pz = this.z;
+
+  this.update = function() {
+    this.z = this.z - speed;
+    if (this.z < 1) {
+      this.z = width/1.5;
+      this.x = random(-width, width);
+      this.y = random(-height, height);
+      this.pz = this.z;
+    }
+  }
+
+  this.show = function() {
+    var sx = map(this.x / this.z, 0, 1, 0, width);
+    var sy = map(this.y / this.z, 0, 1, 0, height);
+
+    var r = map(this.z, 0, width, random(70, 200), 0);
+    //ellipse(sx, sy, r, r);
+
+    //
+    // if (mouseIsPressed) {
+    //   image(soul,sx, sy, r*5, r*5)
+    //   imageMode(CENTER)
+    // } else {
+       image(soul,sx, sy, r, r)
+    //   imageMode(CENTER)
+    // }
+
+
+    var px = map(this.x / this.pz, 0, 1, 0, width);
+    var py = map(this.y / this.pz, 0, 1, 0, height);
+
+    this.pz = this.z;
+
+
+    stroke("red");
+    strokeWeight(2)
+    line(px, py, sx, sy);
+
+
+  }
 }
