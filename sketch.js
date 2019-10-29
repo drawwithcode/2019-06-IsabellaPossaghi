@@ -1,6 +1,6 @@
 
 
-var stars = [];
+var heart = [];
 var speed;
 
 var background_c;
@@ -42,7 +42,7 @@ function setup() {
   background_c = color(0);
   createCanvas(windowWidth, windowHeight);
   for (var i = 0; i < 200; i++) {
-    stars[i] = new Star();
+    heart[i] = new Heart();
   }
 
 }
@@ -62,9 +62,9 @@ function draw() {
   background(background_c)
   speed = map(mouseX, 0, width, 0, 60);
   translate(width / 2, height / 2);
-  for (var i = 0; i < stars.length; i++) {
-    stars[i].update();
-    stars[i].show();
+  for (var i = 0; i < heart.length; i++) {
+    heart[i].update();
+    heart[i].show();
   }
 
 
@@ -76,7 +76,7 @@ function draw() {
 
 
 
-function Star() {
+function Heart() {
   this.x = random(-width, width);
   this.y = random(-height, height);
   this.z = random(width); //it's all about the z!
