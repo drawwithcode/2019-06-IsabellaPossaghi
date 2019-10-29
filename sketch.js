@@ -21,12 +21,14 @@ function preload() {
 
 function setup() {
 
-  button = createButton("love color")
-  button.mousePressed(change_background);
-
   button2 =createButton("love size")
   button2.mousePressed(change_size);
+  button2.style('background-color', "pink");
 
+  button = createButton("love color")
+  button.mousePressed(change_background);
+  button.style('background-color', "pink");
+  
   slider = createSlider(1,500,250);
 
 
