@@ -23,13 +23,16 @@ function setup() {
 
   button2 =createButton("love size")
   button2.mousePressed(change_size);
-  button2.style('background-color', "pink");
+  button2.style('background-color', "orangered");
+  button2.position(200, 87);
 
   button = createButton("love color")
   button.mousePressed(change_background);
-  button.style('background-color', "pink");
-  
+  button.style('background-color', "orangered");
+  button.position(200, 120);
+
   slider = createSlider(1,500,250);
+  slider.position(800,170)
 
 
 
