@@ -1,17 +1,82 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
-    <style> body {padding: 0; margin: 0;} </style>
-    <script src="p5.min.js"></script>
-    <!-- <script src="addons/p5.sound.min.js"></script> -->
-    <script src="sketch.js"></script>
-  </head>
-  <body style ="background-color:pink;">
 
-    <h1 style="font-family:georgia,garamond,serif;font-size:36px;font-style:italic;" > SHARE SOME LOVE</h1>
-    <h2 style="font-family:georgia,garamond,serif;font-size:16px;font-style:italic;"> CLICK LOVE SIZE,</h2>
-    <h2 style="font-family:georgia,garamond,serif;font-size:16px;font-style:italic;"> THEN LOVE COLOR</h2>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      background: black;
+    }
+
+    h1 {
+      font-family: 'georgia', garamond, serif;
+      font-size: 36px;
+      font-style: italic;
+      color: white;
+      position: absolute;
+      left: 40px;
+      top: 10px
+    }
+
+    h2 {
+      font-family: 'georgia', garamond, serif;
+      font-size: 16px;
+      font-style: italic;
+      color: white;
+      position: absolute;
+      left: 40px;
+      top: 74px;
+    }
+
+  #part2 {
+      font-family: 'georgia', garamond, serif;
+      font-size: 16px;
+      font-style: italic;
+      color: white;
+      position: absolute;
+      left: 40px;
+      top: 108px;
+    }
+
+    #part3{
+      font-family: 'georgia', garamond, serif;
+      font-size: 16px;
+      font-style: italic;
+      color: white;
+      position: absolute;
+      left: 350px;
+      top: 74px;
+    }
+
+    #part4 {
+      font-family: 'georgia', garamond, serif;
+      font-size: 16px;
+      font-style: italic;
+      color: white;
+      position: absolute;
+      left: 350px;
+      top: 108px;
+    }
+
+  </style>
+  <script src="p5.min.js"></script>
+  <!-- <script src="addons/p5.sound.min.js"></script> -->
+  <script src="sketch.js"></script>
+</head>
+
+<body>
+
+  <canvas id="myCanvas" width="windowWidth" height="170" style="border:1px"></canvas>
+
+  <h1> SHARE SOME LOVE</h1>
+  <h2> CLICK LOVE SIZE, </h2>
+  <h2 id="part2"> THEN LOVE COLOR</h2>
+  <h2 id="part3"> WRITE YOUR LOVE MESSAGE</h2>
+  <h2 id="part4"> HOW MUCH IS BIG YOUR LOVE?</h2>
+
+</body>
+
 </html>
