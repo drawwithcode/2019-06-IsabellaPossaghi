@@ -2,6 +2,8 @@
 <html>
 
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Flamenco&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gravitas+One&display=swap" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
   <style>
@@ -11,18 +13,28 @@
       background: black;
     }
 
-    h1 {
-      font-family: 'georgia', garamond, serif;
+    #shadow {
+      font-family: 'Gravitas One';
       font-size: 36px;
       font-style: italic;
-      color: white;
+      color: pink;
+      position: absolute;
+      left: 45px;
+      top: 10px
+    }
+
+    h1 {
+      font-family: 'Gravitas One';
+      font-size: 36px;
+      font-style: italic;
+      color: red;
       position: absolute;
       left: 40px;
       top: 10px
     }
 
     h2 {
-      font-family: 'georgia', garamond, serif;
+      font-family: 'Flamenco';
       font-size: 16px;
       font-style: italic;
       color: white;
@@ -32,7 +44,7 @@
     }
 
   #part2 {
-      font-family: 'georgia', garamond, serif;
+      font-family: 'Flamenco';
       font-size: 16px;
       font-style: italic;
       color: white;
@@ -42,7 +54,7 @@
     }
 
     #part3{
-      font-family: 'georgia', garamond, serif;
+      font-family: 'Flamenco';
       font-size: 16px;
       font-style: italic;
       color: white;
@@ -52,7 +64,7 @@
     }
 
     #part4 {
-      font-family: 'georgia', garamond, serif;
+      font-family: 'Flamenco';
       font-size: 16px;
       font-style: italic;
       color: white;
@@ -71,7 +83,8 @@
 
   <canvas id="myCanvas" width="windowWidth" height="170" style="border:1px"></canvas>
 
-  <h1> SHARE SOME LOVE</h1>
+  <h1> SHARE SOME LOVE!</h1>
+  <h1 id="shadow"> SHARE SOME LOVE!</h1>
   <h2> CLICK LOVE SIZE, </h2>
   <h2 id="part2"> THEN LOVE COLOR</h2>
   <h2 id="part3"> WRITE YOUR LOVE MESSAGE</h2>

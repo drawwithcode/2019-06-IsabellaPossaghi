@@ -81,6 +81,7 @@ function draw() {
   textAlign (CENTER);
   text (myInput.value(), width/2, height/2);
   textSize(slider.value())
+  textFont("Gravitas One")
 
 
 }
