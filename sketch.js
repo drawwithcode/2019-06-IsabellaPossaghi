@@ -73,7 +73,7 @@ function draw() {
   }
 
   //love helper
-  image(cupid, 100 * random(1, 1.05), 100 * random(1, 1.05), 200, 210)
+  image(cupid, 100 * random(1, 1.02), 100 * random(1, 1.02), 200, 210)
   imageMode(CENTER)
 
   //love message
@@ -127,9 +127,7 @@ function Heart() {
 
     this.pz = this.z;
 
-    //"arrow"
-    line(sx, sy, px, py);
-    strokeWeight(size*8)
+    strokeWeight(8)
     stroke(	230,  20 , 70)
 
 
